@@ -1,3 +1,28 @@
 {# templates/accueil/en.html.twig #}
-<a href="/fr" id="boutonUrl">français</a>
-<h1>Your lucky number is {{ number }}</h1>
+{% extends 'base.html.twig' %}
+{% block menu %}
+  {{ include('outils/menu-en.html.twig') }}
+{% endblock %}
+{% block body %}
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a href="/fr" class="nav-link" id="boutonUrl">français</a>
+    </li>
+    <li class="nav-item">
+      <p class="nav-link">/</p>
+    </li>
+    <li class="nav-item">
+      <a href="/en" class="nav-link active" id="boutonUrl">english</a>
+    </li>
+  </ul>
+  </nav>
+    {{ include('accueil/presentation-en.html.twig')}}
+    {{ include('accueil/c.v-en.html.twig')}}
+    {{ include('accueil/projects-en.html.twig')}}
+    {{ include('accueil/watchs-en.html.twig')}}
+    {{ include('accueil/gallery-en.html.twig')}}
+{% endblock %}
+{% block footer %}
+  {{ include('outils/footer-en.html.twig') }}
+{% endblock %}
