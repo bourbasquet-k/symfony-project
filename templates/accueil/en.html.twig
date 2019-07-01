@@ -1,28 +1,70 @@
 {# templates/accueil/en.html.twig #}
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/all.css.twig">
+  <link rel="stylesheet" href="/css/menu.css.twig">
+  <link rel="stylesheet" href="/css/presentation.css.twig">
+  <link rel="stylesheet" href="/css/projects.css.twig">
+  <link rel="stylesheet" href="/css/watchs.css.twig">
+  <link rel="stylesheet" href="/css/gallery.css.twig">
+  <link rel="stylesheet" href="/js/scrollbar/scrollbar.css">
+  <link rel="stylesheet" href="/js/fullpage/fullpage.css">
+{% endblock %}
 {% block menu %}
   {{ include('outils/menu-en.html.twig') }}
 {% endblock %}
 {% block body %}
-  <nav class="navbar navbar-expand-lg navbar-light">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a href="/fr" class="nav-link" id="boutonUrl">français</a>
-    </li>
-    <li class="nav-item">
-      <p class="nav-link">/</p>
-    </li>
-    <li class="nav-item">
-      <a href="/en" class="nav-link active" id="boutonUrl">english</a>
-    </li>
-  </ul>
-  </nav>
-    {{ include('accueil/presentation-en.html.twig')}}
-    {{ include('accueil/c.v-en.html.twig')}}
-    {{ include('accueil/projects-en.html.twig')}}
-    {{ include('accueil/watchs-en.html.twig')}}
-    {{ include('accueil/gallery-en.html.twig')}}
+  <div id="container">
+    <div id="pres" class="section">
+
+      {{ include('accueil/en/presentation-en.html.twig')}}
+
+    </div>
+    <div id="proj" class="section">
+
+      {{ include('accueil/en/projects-en.html.twig')}}
+
+      <div id="" class="slide">
+        {{ include('accueil/en/projects/proj1-en.html.twig')}}
+      </div>
+      <div id="" class="slide">
+        {{ include('accueil/en/projects/proj2-en.html.twig')}}
+      </div>
+      <div id="" class="slide">
+        {{ include('accueil/en/projects/proj3-en.html.twig')}}
+      </div>
+
+    </div>
+    <div id="watc" class="section">
+
+      {{ include('accueil/en/watchs-en.html.twig')}}
+
+      <div id="" class="slide">
+        {{ include('accueil/en/watchs/article1-en.html.twig')}}
+      </div>
+      <div id="" class="slide">
+        {{ include('accueil/en/watchs/article2-en.html.twig')}}
+      </div>
+
+    </div>
+    <div id="gall" class="section">
+
+      {{ include('accueil/en/gallery-en.html.twig')}}
+
+    </div>
+  </div>
 {% endblock %}
 {% block footer %}
   {{ include('outils/footer-en.html.twig') }}
+{% endblock %}
+{% block javascripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a7bc9f2f50.js"></script>
+  <script type='text/javascript' src='/js/scrollbar/scrollbar.js'></script>
+  <script type='text/javascript' src='/js/fullpage/fullpage.extensions.min.js'></script>
+  <script type='text/javascript' src='/js/fullpageSet.js'></script>
+  <script type='text/javascript' src='/js/scrollTo.js'></script>
 {% endblock %}

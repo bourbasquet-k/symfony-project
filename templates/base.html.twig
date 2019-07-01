@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Site personnel | Kévin Bourbasquet</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% block menu %}{% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

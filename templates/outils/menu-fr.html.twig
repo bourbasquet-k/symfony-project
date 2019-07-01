@@ -1,46 +1,42 @@
 {# templates/outils/menuFr.html.twig #}
 {% extends 'base.html.twig' %}
 {% block menu %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Bourbasquet Kévin </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <h1 id="titre-page"><a class="navbar-brand" href="">Bourbasquet Kévin </a></h1>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Présentation <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">C.V</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projets
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Projet 1</a>
-                        <a class="dropdown-item" href="#">Projet 2</a>
-                        <a class="dropdown-item" href="#">Projet 3</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Veilles
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Veille technologique</a>
-                        <a class="dropdown-item" href="#">Veille juridique</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Galerie</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <ul class="navbar-nav ml-sm-5 smooth-scroll list-unstyled">
+      <button class="btn btn-outline-light my-2 my-sm-0" onclick="window.open(this.href='images/cv/bourbasquet-kevin-cv.pdf');return false;" type="button">Voir C.V</button>
+    </ul>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul id="navigation" class="navbar-nav ml-auto mr-auto smooth-scroll">
+        <li class="nav-item">
+          <a class="nav-link js-scrollTo" href="#Presentation">Présentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scrollTo" href="#Projects">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scrollTo" href="#Watch">Veille technologique</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scrollTo" href="#Gallery">Galerie</a>
+        </li>
+      </ul>
+
+      <ul id="language" class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a href="/fr" class="nav-link active" id="boutonUrl">français</a>
+        </li>
+        <li class="separator nav-link">/</li>
+        <li class="nav-item">
+          <a href="/en" class="nav-link" id="boutonUrl">english</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 {% endblock %}
