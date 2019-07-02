@@ -5,9 +5,20 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Twig\Environment;
 
 class Accueil extends AbstractController
 {
+    /**
+     * @var Environment
+     */
+    private $twig;
+
+    public function __construct(Environment $twig)
+    {
+        $this->twig = $twig;
+    }
+
     /**
      * @Route("/{_locale}",
      * defaults={
@@ -17,14 +28,14 @@ class Accueil extends AbstractController
      *      "_locale": "fr|en"
      * })
      */
-    public function number($_locale)
+    public function index($_locale): Response
     {
         $number = random_int(0, 100);
 
         if($_locale === "fr"){
-            return $this->render('accueil/fr.php', ['number' => $number]);
+            return $this->render('accueil/fr.html.twig', ['number' => $number]);
         } else if($_locale === "en"){
-            return $this->render('accueil/en.php', ['number' => $number]);
+            return $this->render('accueil/en.html.twig', ['number' => $number]);
         }
     }
 }
